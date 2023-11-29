@@ -6,13 +6,19 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import org.aspectj.lang.annotation.RequiredTypes;
+
 
 import java.util.Objects;
-
+@MappedSuperclass
 public abstract class AbstractEntity {
 
+    @GeneratedValue
+    @Id
     private int id;
 
+    @NotNull
+    @Size(min = 0, max = 100)
     private String name;
 
     public int getId() {
