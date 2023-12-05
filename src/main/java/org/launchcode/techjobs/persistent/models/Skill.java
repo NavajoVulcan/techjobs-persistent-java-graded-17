@@ -5,10 +5,14 @@ import jakarta.persistence.ManyToMany;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.util.ArrayList;
 import java.util.List;
 //right click getters and setters, rather than menu, easier(?)
 @Entity
 public class Skill extends AbstractEntity {
+//blog line 20
+    @ManyToMany(mappedBy = "skills")
+    private List<Job> jobs = new ArrayList<>();
 
     public List<Job> getJobs() {
         return jobs;
@@ -18,8 +22,6 @@ public class Skill extends AbstractEntity {
         this.jobs = jobs;
     }
 
-    @ManyToMany(mappedBy = "skills")
-    public List<Job> jobs;
     public Skill() {
 
     }
