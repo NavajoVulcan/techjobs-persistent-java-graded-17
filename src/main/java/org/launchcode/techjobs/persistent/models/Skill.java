@@ -10,7 +10,7 @@ import java.util.List;
 //right click getters and setters, rather than menu, easier(?)
 @Entity
 public class Skill extends AbstractEntity {
-//blog line 20
+//blog line 20 refer
     @ManyToMany(mappedBy = "skills")
     private List<Job> jobs = new ArrayList<>();
 
